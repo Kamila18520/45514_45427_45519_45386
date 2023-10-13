@@ -7,7 +7,17 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] AudioSource ButtonClickSound;
+    [SerializeField] GameObject Menu;
 
+
+    private void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Menu.SetActive(true);
+        }
+    }
     public void LoadLevel()
     {
         ButtonClick();
@@ -17,7 +27,8 @@ public class MenuManager : MonoBehaviour
     private IEnumerator WaitForOneSec()
     {
         yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(1);
+        Menu.SetActive(false);
+       // SceneManager.LoadScene(1);
     }
 
     public void ExitGame()
