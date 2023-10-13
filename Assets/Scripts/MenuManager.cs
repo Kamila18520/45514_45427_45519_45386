@@ -91,15 +91,17 @@ public class MenuManager : MonoBehaviour
     }
     public void LoadLevel()
     {
+        Debug.Log("Gra zosta³a rozpoczêta");
+        MenuPanel.SetActive(false);
         ButtonClick();
-        StartCoroutine(WaitForOneSec());
+        //StartCoroutine(WaitForOneSec());
     }
 
     private IEnumerator WaitForOneSec()
     {
         yield return new WaitForSeconds(.5f);
-        MenuPanel.SetActive(false);
-       // SceneManager.LoadScene(1);
+
+
     }
 
 
