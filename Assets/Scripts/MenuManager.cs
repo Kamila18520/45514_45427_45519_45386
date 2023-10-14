@@ -16,15 +16,20 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject PausePanel;
     //[SerializeField] GameObject BackToMenu;
     private bool isPause;
+    public Camera MainCamera1;
+    public Camera MainCamera2;
 
-    private void Start()
+    
+  private void Start()
     {
         MenuPanel.SetActive(true);
         SettingsPanel.SetActive(false);
-        PausePanel.SetActive(false);    
+        PausePanel.SetActive(false);
 
-
-
+        // Aktywacja kamery 1 w menu
+        MainCamera1.enabled = true;
+        // Dezaktywacja kamery 2
+        MainCamera2.enabled = false;
 
         isPause = false;
     }
@@ -34,16 +39,20 @@ public class MenuManager : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPause && !MenuPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPause && !MenuPanel.activeSelf && MainCamera2.enabled)
         {
             PausePanel.SetActive(true);
             Time.timeScale = 0f;
             isPause = true;
             ButtonClick();
+            MainCamera1.enabled = true;
+            MainCamera2.enabled = false;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && isPause && !MenuPanel.activeSelf)
         {
             ResumeButton();
+            MainCamera1.enabled = false;
+            MainCamera2.enabled = true;
         }
     }
 
@@ -93,6 +102,10 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Gra zosta³a rozpoczêta");
         MenuPanel.SetActive(false);
+
+        // Aktywacja kamery 2 po naciœniêciu "Start"
+        MainCamera2.enabled = true;
+
         ButtonClick();
         //StartCoroutine(WaitForOneSec());
     }
