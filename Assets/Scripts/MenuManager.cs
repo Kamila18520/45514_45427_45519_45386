@@ -42,17 +42,15 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && !isPause && !MenuPanel.activeSelf && MainCamera2.enabled)
         {
             PausePanel.SetActive(true);
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             isPause = true;
             ButtonClick();
-            MainCamera1.enabled = true;
-            MainCamera2.enabled = false;
+            ChangeCamera1();
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && isPause && !MenuPanel.activeSelf)
         {
             ResumeButton();
-            MainCamera1.enabled = false;
-            MainCamera2.enabled = true;
+            //ChangeCamera2();
         }
     }
 
@@ -67,8 +65,9 @@ public class MenuManager : MonoBehaviour
     public void ResumeButton()
     {
         PausePanel.SetActive(false);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         isPause = false;
+        ChangeCamera2();
         ButtonClick();
     }
 
@@ -117,6 +116,17 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    private void ChangeCamera1()
+    {
+        MainCamera1.enabled = true;
+        MainCamera2.enabled = false;
+
+    }
+    private void ChangeCamera2()
+    {
+        MainCamera1.enabled = false;
+        MainCamera2.enabled = true;
+    }
 
 
 
