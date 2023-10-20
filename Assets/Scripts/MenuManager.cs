@@ -38,8 +38,9 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
+
         
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPause && !MenuPanel.activeSelf && MainCamera2.enabled)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPause && !MenuPanel.activeSelf && MainCamera2.enabled && !SettingsPanel.activeSelf)
         {
             PausePanel.SetActive(true);
             //Time.timeScale = 0f;
@@ -47,7 +48,7 @@ public class MenuManager : MonoBehaviour
             ButtonClick();
             ChangeCamera1();
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && isPause && !MenuPanel.activeSelf)
+        else if(Input.GetKeyDown(KeyCode.Escape) && isPause && !MenuPanel.activeSelf && !SettingsPanel.activeSelf)
         {
             ResumeButton();
             //ChangeCamera2();
@@ -103,8 +104,7 @@ public class MenuManager : MonoBehaviour
         MenuPanel.SetActive(false);
 
         // Aktywacja kamery 2 po naciœniêciu "Start"
-        MainCamera2.enabled = true;
-
+        ChangeCamera2();
         ButtonClick();
         //StartCoroutine(WaitForOneSec());
     }

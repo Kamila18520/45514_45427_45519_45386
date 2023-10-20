@@ -332,35 +332,11 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &303596139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8155265366876965762, guid: 410f8d700ec9f424a8030b6fc8f89c2e, type: 3}
-  m_PrefabInstance: {fileID: 4827695847767343037}
-  m_PrefabAsset: {fileID: 0}
---- !u!143 &303596140 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 3619804409833447165, guid: 410f8d700ec9f424a8030b6fc8f89c2e, type: 3}
-  m_PrefabInstance: {fileID: 4827695847767343037}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &303596141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3505991071432239347, guid: 410f8d700ec9f424a8030b6fc8f89c2e, type: 3}
   m_PrefabInstance: {fileID: 4827695847767343037}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &303596142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303596139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a78429f18cffe4d8ff3282a4a819b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 303596140}
-  speed: 5
 --- !u!1 &328670714
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &328670715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,9 +985,9 @@ Transform:
   m_GameObject: {fileID: 1548074311}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2821, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.2821, y: -2.19, z: 0}
   m_LocalScale: {x: 211.11644, y: 1, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1164497497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1153,7 +1129,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1164497497}
-  m_LocalEulerAnglesHint: {x: 90, y: -180, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 180}
 --- !u!124 &1624170848
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1552,10 +1528,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3505991071432239347, guid: 410f8d700ec9f424a8030b6fc8f89c2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 227985724}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8155265366876965762, guid: 410f8d700ec9f424a8030b6fc8f89c2e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 303596142}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410f8d700ec9f424a8030b6fc8f89c2e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
