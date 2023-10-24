@@ -19,7 +19,7 @@ public class EventableType<T> where T : unmanaged, IComparable, IComparable<T>, 
                 return;
             var old = this.value;
             this.value = value;
-            OnValueChanged.Invoke(old);
+            OnValueChanged?.Invoke(old);
         }
     }
     public void SetValue(EventableType<T> other)
