@@ -12,9 +12,13 @@ public class UIBarController : MonoBehaviour
 
     private void Awake()
     {
+        Debug.LogError("UIBarController");
+
         slider = GetComponentInChildren<Slider>();
         variable.Variable.OnValueChanged += OnValueChanged;
         variableMax.Variable.OnValueChanged += OnValueChanged;
+        variableMax.Variable.OnValueChanged += OnMaxValueChanged;
+        OnMaxValueChanged(0f);
         OnValueChanged(0f);
 
     }
@@ -23,11 +27,19 @@ public class UIBarController : MonoBehaviour
     {
         variable.Variable.OnValueChanged -= OnValueChanged;
         variableMax.Variable.OnValueChanged -= OnValueChanged;
+        variableMax.Variable.OnValueChanged -= OnMaxValueChanged;
+
     }
 
     private void OnValueChanged(float old)
     {
-        slider.value = variable.Variable.Value / variableMax.Variable.Value;
+        slider.value = variable.Variable.Value;
+        //slider.value = variable.Variable.Value / variableMax.Variable.Value;
+    }
+
+    private void OnMaxValueChanged(float old)
+    {
+        slider.maxValue = variableMax.Variable.Value;
     }
        
 }

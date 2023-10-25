@@ -15,6 +15,7 @@ public class HealthComponent : MonoBehaviour, IDamagable
 
     private void Awake()
     {
+        Debug.LogError("HealthComponent");
         health.Value = healthMax.Value;
 
        if (variableHealth)

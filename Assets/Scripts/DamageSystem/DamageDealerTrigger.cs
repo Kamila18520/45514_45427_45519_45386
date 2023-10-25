@@ -6,7 +6,7 @@ public class DamageDealerTrigger : MonoBehaviour
 {
     [SerializeField] float damagePerSecond;
 
-    private void onTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         var damagable = other.GetComponentInParent<IDamagable>();
         if (ReferenceEquals(damagable, null))
