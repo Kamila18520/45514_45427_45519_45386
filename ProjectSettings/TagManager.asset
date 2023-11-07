@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - TriggerBox
+  - Weapon
   layers:
   - Default
   - TransparentFX
