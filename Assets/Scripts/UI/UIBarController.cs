@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(1000)]
 public class UIBarController : MonoBehaviour
 {
     Slider slider;
@@ -17,8 +18,8 @@ public class UIBarController : MonoBehaviour
         slider = GetComponentInChildren<Slider>();
         variable.Variable.OnValueChanged += OnValueChanged;
         variableMax.Variable.OnValueChanged += OnValueChanged;
-        variableMax.Variable.OnValueChanged += OnMaxValueChanged;
-        OnMaxValueChanged(0f);
+        //variableMax.Variable.OnValueChanged += OnMaxValueChanged;
+        //OnMaxValueChanged(0f);
         OnValueChanged(0f);
 
     }

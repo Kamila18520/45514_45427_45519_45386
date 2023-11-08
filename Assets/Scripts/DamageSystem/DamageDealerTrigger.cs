@@ -8,13 +8,15 @@ public class DamageDealerTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        var damagable = other.GetComponentInParent<IDamagable>();
-        if (ReferenceEquals(damagable, null))
+        var damagables = other.GetComponentsInParent<IDamagable>();
+        if (damagables.Length == 0)
             return;
         
-        damagable.AddDamage(damagePerSecond * Time.fixedDeltaTime);
         
-
+        foreach (var damagable in damagables)
+        {
+            damagable.AddDamage(damagePerSecond *  Time.fixedDeltaTime);
+        }
 
     }
 

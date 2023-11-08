@@ -6,34 +6,36 @@ using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour, IDamagable
 {
+    [field: SerializeField] public EventableType <float> Health { get; private set; }
+    [field: SerializeField] public EventableType <float> HealthMax { get; private set; }
+
     [Header("Variable")]
     [SerializeField] SOFloatVariable variableHealth;
     [SerializeField] SOFloatVariable variableHealthMax;
 
-    [SerializeField] EventableType<float> health;
-    [SerializeField] EventableType<float> healthMax;
+    
 
     private void Awake()
     {
-        Debug.LogError("HealthComponent");
-        health.Value = healthMax.Value;
+        // Debug.LogError("HealthComponent");
+        Health.Value = HealthMax.Value; 
 
        if (variableHealth)
         {
-            health.OnValueChanged += (old) => variableHealth.Variable.Value = health.Value;
-            variableHealth.Variable.Value = health.Value;
+           
+            variableHealth.Variable = Health;
         }
 
 
         if (variableHealthMax)
         {
-            healthMax.OnValueChanged += (old) => variableHealthMax.Variable.Value = healthMax.Value;
-            variableHealthMax.Variable.Value = healthMax.Value;
+           
+            variableHealthMax.Variable = HealthMax;
         }
     }
     public bool AddDamage(float damage)
     {
-        health.Value -= damage;
+        Health.Value -= damage;
         return true;
     }
 
@@ -47,7 +49,7 @@ public class HealthComponent : MonoBehaviour, IDamagable
         [ContextMenu("Invoke AddDebugHealthDiff")]
         private void InvokeOnHealthChangedEditor()
         {
-        health.Value += debugHealthDiff;
+        Health.Value += debugHealthDiff;
         }
 #endif
 }

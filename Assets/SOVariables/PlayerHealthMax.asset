@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerHealthMax
   m_EditorClassIdentifier: 
   Variable:
-    value: 1500
-  debugHealthDiff: -80
+    value: 1000
+  debugHealthDiff: 1500

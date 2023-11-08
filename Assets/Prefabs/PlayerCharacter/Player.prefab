@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3505991071432239347}
   - component: {fileID: 3619804409833447165}
   - component: {fileID: 6962925994507042713}
+  - component: {fileID: 7427960008919417865}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -75,6 +76,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 3619804409833447165}
   speed: 5
+--- !u!114 &7427960008919417865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8155265366876965762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1429a93aa0f50047ad97c31b5369389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Health>k__BackingField:
+    value: 0
+  <HealthMax>k__BackingField:
+    value: 0
+  variableHealth: {fileID: 11400000, guid: e9b4c71b5c28c844cafdc3c4aedfb86c, type: 2}
+  variableHealthMax: {fileID: 11400000, guid: 13a5d04f140c3c14d93961209857bd87, type: 2}
+  debugHealthDiff: 500
 --- !u!1001 &6146071984747547032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +228,10 @@ PrefabInstance:
     - target: {fileID: 2217872679193979862, guid: 5a76fac9c298d8d42af26522211945ba, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018318690584355823, guid: 5a76fac9c298d8d42af26522211945ba, type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4679676884043963872, guid: 5a76fac9c298d8d42af26522211945ba, type: 3}
       propertyPath: m_LocalPosition.x
