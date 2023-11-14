@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7641621700646159445}
   - component: {fileID: 5529571309225742070}
   - component: {fileID: 567900718925719284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SterringTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7836465682674800236}
   - component: {fileID: 776038571519571526}
   - component: {fileID: 8252122528634382397}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 4766365307711523283}
   - component: {fileID: 6334267106344031629}
   - component: {fileID: 2046804968628194952}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6729293949191162720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
