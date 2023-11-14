@@ -6,12 +6,17 @@ public class PlayerPlaceablePlacer : MonoBehaviour
 {
     [SerializeField] float placeDistance = 1f;
     [SerializeField] GameObject prefabToPlace;
-    [SerializeField] GameObject objectToPlaceGhost;
+    [SerializeField] float energyCost;
+
     [Header("Place Settings")]
     [SerializeField] LayerMask layerMask;
 
+    [Header("PlayerEnergy")]
+    [SerializeField] SOFloatVariable energyVariable;
+
     enum State { Idle, Placing }
     State currentState = State.Idle;
+
     readonly Collider[] overlapBoxResult = new Collider[1];
 
     public Vector3 DebugCheckPosition;
@@ -42,14 +47,15 @@ public class PlayerPlaceablePlacer : MonoBehaviour
 
     private void PlacingUpdate()
     {
-        Vector3Int checkPosition = Vector3Int.FloorToInt(transform.position + transform.forward * placeDistance);
-        Vector3 boxCastPosition = checkPosition + Vector3.up * 0.05f;
-        
-        int collidersCount = Physics.OverlapBoxNonAlloc(boxCastPosition, Vector3.zero, overlapBoxResult, Quaternion.identity, layerMask, QueryTriggerInteraction.Collide);
+        var checkPosition = Vector3Int.FloorToInt(transform.position + transform.forward * placeDistance);
+        var boxCastPosition = checkPosition + Vector3.up * 0.05f;
+        var collidersCount = Physics.OverlapBoxNonAlloc(boxCastPosition, Vector3.zero, overlapBoxResult, Quaternion.identity, layerMask, QueryTriggerInteraction.Collide);
         bool gridIsFree = collidersCount == 0;
+        var hasEnergyToPlace = energyVariable.Variable.Value >=energyCost;
 
-        if (gridIsFree && Input.GetKeyDown(KeyCode.Space))
+        if (gridIsFree && Input.GetKeyDown(KeyCode.Space) && energyVariable.Variable.Value >= energyCost)
         {
+            energyVariable.Variable.Value -= energyCost;
             Instantiate(prefabToPlace, checkPosition, Quaternion.identity);
         }
 

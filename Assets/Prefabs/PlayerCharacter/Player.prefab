@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3619804409833447165}
   - component: {fileID: 6962925994507042713}
   - component: {fileID: 7427960008919417865}
-  - component: {fileID: 5633672239886684025}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -96,26 +95,6 @@ MonoBehaviour:
   variableHealth: {fileID: 11400000, guid: e9b4c71b5c28c844cafdc3c4aedfb86c, type: 2}
   variableHealthMax: {fileID: 11400000, guid: 13a5d04f140c3c14d93961209857bd87, type: 2}
   debugHealthDiff: 500
---- !u!114 &5633672239886684025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8155265366876965762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea32edb9cf586634cb60c4d197833111, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placeDistance: 1.5
-  prefabToPlace: {fileID: 0}
-  objcetToPlaceGhost: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 200
-  DebugCheckPosition: {x: 0, y: 0, z: 0}
-  DebugIsCheckPositionFree: 0
 --- !u!1001 &6146071984747547032
 PrefabInstance:
   m_ObjectHideFlags: 0
